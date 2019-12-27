@@ -16,7 +16,7 @@ const (
 )
 
 var typeString = map[EnvironmentType]string{
-	Sandbox:    "http://api.sandbox.midtrans.com",
+	Sandbox:    "https://api.sandbox.midtrans.com",
 	Production: "https://api.midtrans.com",
 }
 
