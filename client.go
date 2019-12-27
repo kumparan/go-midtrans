@@ -72,6 +72,7 @@ func (c *Client) ExecuteRequest(req *http.Request, v interface{}) error {
 
 	start := time.Now()
 
+	logger.Println("ini ya", req)
 	res, err := httpClient.Do(req)
 	if err != nil {
 		if logLevel > 0 {
