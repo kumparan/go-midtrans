@@ -18,14 +18,16 @@ type Client struct {
 	ClientKey  string
 	ServerKey  string
 
-	LogLevel int
-	Logger   *log.Logger
+	LogLevel   int
+	Logger     *log.Logger
+	HTTPClient *http.Client
 }
 
 // NewClient : this function will always be called when the library is in use
 func NewClient() Client {
 	return Client{
 		APIEnvType: Sandbox,
+		HTTPClient: httpClient,
 
 		// LogLevel is the logging level used by the Midtrans library
 		// 0: No logging
@@ -73,7 +75,7 @@ func (c *Client) ExecuteRequest(req *http.Request, v interface{}) error {
 	start := time.Now()
 
 	logger.Println("ini ya", req)
-	res, err := httpClient.Do(req)
+	res, err := c.HTTPClient.Do(req)
 	if err != nil {
 		if logLevel > 0 {
 			logger.Println("Cannot send request: ", err)
