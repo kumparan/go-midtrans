@@ -17,6 +17,7 @@ type Client struct {
 	APIEnvType EnvironmentType
 	ClientKey  string
 	ServerKey  string
+	HTTPClient *http.Client
 
 	LogLevel int
 	Logger   *log.Logger
@@ -26,6 +27,7 @@ type Client struct {
 func NewClient() Client {
 	return Client{
 		APIEnvType: Sandbox,
+		HTTPClient: defaultHTTPClient,
 
 		// LogLevel is the logging level used by the Midtrans library
 		// 0: No logging
@@ -39,7 +41,7 @@ func NewClient() Client {
 
 // ===================== HTTP CLIENT ================================================
 var defHTTPTimeout = 80 * time.Second
-var httpClient = &http.Client{Timeout: defHTTPTimeout}
+var defaultHTTPClient = &http.Client{Timeout: defHTTPTimeout}
 
 // NewRequest : send new request
 func (c *Client) NewRequest(method string, fullPath string, body io.Reader) (*http.Request, error) {
@@ -72,7 +74,7 @@ func (c *Client) ExecuteRequest(req *http.Request, v interface{}) error {
 
 	start := time.Now()
 
-	res, err := httpClient.Do(req)
+	res, err := c.HTTPClient.Do(req)
 	if err != nil {
 		if logLevel > 0 {
 			logger.Println("Cannot send request: ", err)
