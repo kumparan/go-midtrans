@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	"github.com/cheekybits/is"
-	midtrans "github.com/veritrans/go-midtrans"
+	midtrans "github.com/kumparan/go-midtrans"
 )
 
 func TestEnvironmentType(t *testing.T) {

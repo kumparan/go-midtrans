@@ -9,7 +9,7 @@
 
 [[projects]]
   branch = "master"
-  name = "github.com/veritrans/go-midtrans"
+  name = "github.com/kumparan/go-midtrans"
   packages = ["."]
   revision = "234c054b1e868f13513595f3d0927e23336e1abf"
 
