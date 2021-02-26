@@ -3,7 +3,7 @@ package midtrans_test
 import (
 	"testing"
 
-	midtrans "github.com/veritrans/go-midtrans"
+	midtrans "github.com/kumparan/go-midtrans"
 
 	"github.com/cheekybits/is"
 )

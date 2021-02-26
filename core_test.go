@@ -7,7 +7,7 @@ import (
 	"time"
 
 	"github.com/cheekybits/is"
-	midtrans "github.com/veritrans/go-midtrans"
+	midtrans "github.com/kumparan/go-midtrans"
 )
 
 var orderId1 string
