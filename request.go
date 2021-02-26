@@ -47,7 +47,6 @@ type ExpiryDetail struct {
 	StartTime string `json:"start_time,omitempty"`
 	Unit      string `json:"unit"`
 	Duration  int64  `json:"duration"`
-<<<<<<< HEAD
 }
 
 // InstallmentTermsDetail : Represent installment available banks
