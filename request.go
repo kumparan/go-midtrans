@@ -47,6 +47,7 @@ type ExpiryDetail struct {
 	StartTime string `json:"start_time,omitempty"`
 	Unit      string `json:"unit"`
 	Duration  int64  `json:"duration"`
+<<<<<<< HEAD
 }
 
 // InstallmentTermsDetail : Represent installment available banks
@@ -83,6 +84,7 @@ type CreditCardDetail struct {
 	SaveTokenID          bool   `json:"save_token_id,omitempty"`
 	SavedTokenIDExpireAt string `json:"saved_token_id_expired_at,omitempty"`
 	Authentication       bool   `json:"authentication,omitempty"`
+	MerchantSaveCard     bool   `json:"merchant_save_card,omitempty"`
 }
 
 // PermataBankTransferDetail : Represent Permata bank_transfer detail
